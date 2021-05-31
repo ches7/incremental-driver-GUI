@@ -1,13 +1,14 @@
 from PyQt5 import QtWidgets
-from PyQt5.QtWidgets import QApplication, QMainWindow
+from PyQt5.QtWidgets import *
 import sys
 
-class MyWindow(QMainWindow):
+class Window(QMainWindow):
     def __init__(self):
-        super(MyWindow, self).__init__()
+        super(Window, self).__init__()
         self.setGeometry(200, 200, 300, 300)
         self.setWindowTitle("pyqt test 1")
         self.initUI()
+    
 
 
     def initUI(self):
@@ -18,6 +19,17 @@ class MyWindow(QMainWindow):
         self.b1 = QtWidgets.QPushButton(self)
         self.b1.setText("click me")
         self.b1.clicked.connect(self.clicked)
+
+        #layout = QGridLayout()
+        #self.setLayout(layout)
+
+        #label1 = QLabel("Example content contained in a tab.")
+        #label2 = QLabel("More example text in the second tab.")
+
+       # tabwidget = QTabWidget()
+        #tabwidget.addTab(self.label, "Tab 1")
+       # tabwidget.addTab(label2, "Tab 2")
+        #self.layout.addWidget(tabwidget, 0, 0)
     
     def clicked(self):
         self.label.setText("you pressed the button")
@@ -30,8 +42,8 @@ class MyWindow(QMainWindow):
 
 def window():
     app = QApplication(sys.argv)
-    win = MyWindow()
-    win.show()
+    screen = Window()
+    screen.show()
     sys.exit(app.exec_())
 
 window()
