@@ -367,50 +367,125 @@ class FourthTab(QWidget):
     def __init__(self):
         super().__init__()
 
-        self.button1 = QtWidgets.QPushButton(self)
-        self.button1.setText("click me")
-        self.button1.clicked.connect(self.updatevariable2)
+        #QH1 - 6_3 S, S1 - 3, SUC label and LineEdit boxes
+        self.nameQH1 = QLabel("QH(1): ")
+        self.nameEditQH1 = QLineEdit()
+        self.nameEditQH1.editingFinished.connect(self.updatevariable)
 
+        self.nameQH2 = QLabel("v(s) = QH(2): ")
+        self.nameEditQH2 = QLineEdit()
+        self.nameEditQH2.editingFinished.connect(self.updatevariable)
+
+        self.nameQH3 = QLabel("NSURF = QH(3): ")
+        self.nameEditQH3 = QLineEdit()
+        self.nameEditQH3.editingFinished.connect(self.updatevariable)
+
+        self.nameQH4 = QLabel("Evp = QH(4): ")
+        self.nameEditQH4 = QLineEdit()
+        self.nameEditQH4.editingFinished.connect(self.updatevariable)
+
+        self.nameQH5 = QLabel("Evq = QH(5): ")
+        self.nameEditQH5 = QLineEdit()
+        self.nameEditQH5.editingFinished.connect(self.updatevariable)
+
+        self.nameQH6_1 = QLabel("b1 = QH(6): ")
+        self.nameEditQH6_1 = QLineEdit()
+        self.nameEditQH6_1.editingFinished.connect(self.updatevariable)
+
+        self.nameQH6_2 = QLabel("b2 = QH(6): ")
+        self.nameEditQH6_2 = QLineEdit()
+        self.nameEditQH6_2.editingFinished.connect(self.updatevariable)
+
+        self.nameQH6_3 = QLabel("b3 = QH(6): ")
+        self.nameEditQH6_3 = QLineEdit()
+        self.nameEditQH6_3.editingFinished.connect(self.updatevariable)
+
+        self.nameS = QLabel("S: ")
+        self.nameEditS = QLineEdit()
+        self.nameEditS.editingFinished.connect(self.updatevariable)
+
+        self.nameS1 = QLabel("S(1): ")
+        self.nameEditS1 = QLineEdit()
+        self.nameEditS1.editingFinished.connect(self.updatevariable)
+
+        self.nameS2 = QLabel("S(2): ")
+        self.nameEditS2 = QLineEdit()
+        self.nameEditS2.editingFinished.connect(self.updatevariable)
+
+        self.nameS3 = QLabel("S(3): ")
+        self.nameEditS3 = QLineEdit()
+        self.nameEditS3.editingFinished.connect(self.updatevariable)
+
+        self.nameSUC = QLabel("SUC: ")
+        self.nameEditSUC = QLineEdit()
+        self.nameEditSUC.editingFinished.connect(self.updatevariable)   
+
+#add objects to layout
         layout = QGridLayout()
-        layout.addWidget(self.button1, 1, 1)
+
+        layout.addWidget(self.nameQH1, 0, 1)
+        layout.addWidget(self.nameEditQH1, 0, 2)
+        layout.addWidget(self.nameQH2, 1, 1)
+        layout.addWidget(self.nameEditQH2, 1, 2)
+        layout.addWidget(self.nameQH3, 2, 1)
+        layout.addWidget(self.nameEditQH3, 2, 2)
+        layout.addWidget(self.nameQH4, 3, 1)
+        layout.addWidget(self.nameEditQH4, 3, 2)
+        layout.addWidget(self.nameQH5, 4, 1)
+        layout.addWidget(self.nameEditQH5, 4, 2)
+        layout.addWidget(self.nameQH6_1, 5, 1)
+        layout.addWidget(self.nameEditQH6_1, 5, 2)
+        layout.addWidget(self.nameQH6_2, 6, 1)
+        layout.addWidget(self.nameEditQH6_2, 6, 2)
+        layout.addWidget(self.nameQH6_3, 7, 1)
+        layout.addWidget(self.nameEditQH6_3, 7, 2)
+        layout.addWidget(self.nameS, 8, 1)
+        layout.addWidget(self.nameEditS, 8, 2)
+        layout.addWidget(self.nameS1, 9, 1)
+        layout.addWidget(self.nameEditS1, 9, 2)
+        layout.addWidget(self.nameS2, 10, 1)
+        layout.addWidget(self.nameEditS2, 10, 2)
+        layout.addWidget(self.nameS3, 11, 1)
+        layout.addWidget(self.nameEditS3, 11, 2)
+        layout.addWidget(self.nameSUC, 12, 1)
+        layout.addWidget(self.nameEditSUC, 12, 2)
+
         self.setLayout(layout)
-    
-    
-    def updatevariable2(self):
-        print("clicked")
+
+#set up updates to global variables    
+    def updatevariable(self):
+        global SWCCPAR1, SWCCPAR2, SWCCPAR3, SWCCPAR4, SWCCPAR5
+
+        QH1 = self.nameEditQH1.text()
+        QH2 = self.nameEditQH2.text()
+        QH3 = self.nameEditQH3.text()
+        QH4 = self.nameEditQH4.text()
+        QH5 = self.nameEditQH5.text()
+        QH6_1 = self.nameEditQH6_1.text()
+        QH6_2 = self.nameEditQH6_2.text()
+        QH6_3 = self.nameEditQH6_3.text()
+        S = self.nameEditS.text()
+        S1 = self.nameEditS1.text()
+        S2 = self.nameEditS2.text()
+        S3 = self.nameEditS3.text()
+        SUC = self.nameEditSUC.text()
 
 class FifthTab(QWidget):
     def __init__(self):
         super().__init__()
 
-#preview label and export button
-        self.nameLabelPreview = QLabel("Preview: ")
-        self.namePreview = QLabel()
-
-        self.button3 = QtWidgets.QPushButton(self)
-        self.button3.setText("export as txt")
-        self.button3.clicked.connect(self.updatevariable2)
-
-        self.refreshbutton = QtWidgets.QPushButton(self)
-        self.refreshbutton.setText("Refresh Preview")
-        self.refreshbutton.clicked.connect(self.updatePreview)
+#export button
+        self.exportButton = QtWidgets.QPushButton(self)
+        self.exportButton.setText("Export as txt")
+        self.exportButton.clicked.connect(self.write_txt)
 
 #add objects to layout
         layout = QGridLayout()
-
-        layout.addWidget(self.nameLabelPreview, 1, 1)
-        layout.addWidget(self.namePreview, 1, 2)
-        layout.addWidget(self.button3, 2, 1)
-        layout.addWidget(self.refreshbutton, 3, 1)
-
+        layout.addWidget(self.exportButton, 1, 1)
         self.setLayout(layout)
 
-    def updatePreview(self):
-        global NT, PAR1
-        self.namePreview.setText(str(NT) +" "+ str(PAR1))
-
-    
-    def updatevariable2(self):
+#write to txt file    
+    def write_txt(self):
         with open('export.txt', 'w') as f:
             f.writelines(str(NT) + "\n")
             f.writelines(str(PAR1) +" "+ str(PAR2) +" "+ str(PAR3)+ "\n")
