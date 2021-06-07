@@ -388,77 +388,28 @@ class FifthTab(QWidget):
     
     def updatevariable2(self):
         with open('export.txt', 'w') as f:
-            f.writelines(str(IMODE1) + "\n")
-            f.writelines(str(IMODE2) + "\n")
-            f.writelines(repr(IMODE3) + "\n")
-            f.writelines(repr(IMODE4) + "\n")
-            f.writelines(repr(DDE) + "\n")
-            f.writelines(repr(RATIO) + "\n")
-            f.writelines(repr(IDIR) + "\n")
-            f.writelines(repr(IREV) + "\n")
-            f.writelines(repr(PEAK) + "\n")
-            f.writelines(repr(NPRINT) + "\n")
-            f.writelines(repr(MAXLOOP) + "\n")
-            f.writelines(repr(NCYCL) + "\n")
-
-            f.writelines(repr(PAR1) + "\n")
-            f.writelines(repr(PAR2) + "\n")
-            f.writelines(repr(PAR3) + "\n")
-            f.writelines(repr(PAR4) + "\n")
-            f.writelines(repr(PAR5) + "\n")
-            f.writelines(repr(PAR6) + "\n")
-            f.writelines(repr(PAR7) + "\n")
-            f.writelines(repr(PAR8) + "\n")
-            f.writelines(repr(PAR9) + "\n")
-            f.writelines(repr(PAR10) + "\n")
-            f.writelines(repr(PAR11) + "\n")
-            f.writelines(repr(PAR12) + "\n")
-            f.writelines(repr(PAR13) + "\n")
-            f.writelines(repr(PAR14) + "\n")
-            f.writelines(repr(PAR15) + "\n")
-            f.writelines(repr(PAR16) + "\n")
-            f.writelines(repr(PAR17) + "\n")
-            f.writelines(repr(PAR21) + "\n")
-            f.writelines(repr(PAR22) + "\n")
-            f.writelines(repr(PAR23) + "\n")
-            f.writelines(repr(PAR24) + "\n")
-            f.writelines(repr(PAR25) + "\n")
-            f.writelines(repr(PAR26) + "\n")
-
-            f.writelines(repr(SWCCPAR1) + "\n")
-            f.writelines(repr(SWCCPAR2) + "\n")
-            f.writelines(repr(SWCCPAR3) + "\n")
-            f.writelines(repr(SWCCPAR4) + "\n")
-            f.writelines(repr(SWCCPAR5) + "\n")
-
-            f.writelines(repr(QH1) + "\n")
-            f.writelines(repr(QH2) + "\n")
-            f.writelines(repr(QH3) + "\n")
-            f.writelines(repr(QH4) + "\n")
-            f.writelines(repr(QH5) + "\n")
-            f.writelines(repr(QH6) + "\n")
-
-            f.writelines(repr(S) + "\n")
-            f.writelines(repr(S1) + "\n")
-            f.writelines(repr(S2) + "\n")
-            f.writelines(repr(S3) + "\n")
-            f.writelines(repr(SUC) + "\n")
-
-            #actual
             f.writelines(str(NT) + "\n")
-            f.writelines(str(PAR1) + str(PAR2) + str(PAR3)+ "\n")
-            f.writelines(str(PAR4) + str(PAR5) + str(PAR6) + "\n")
+            f.writelines(str(PAR1) +" "+ str(PAR2) +" "+ str(PAR3)+ "\n")
+            f.writelines(str(PAR4) +" "+ str(PAR5) +" "+ str(PAR6) + "\n")
             f.writelines(str(PAR7) + "\n")
-            f.writelines(str(IMODE1) + "\n")
+            f.writelines(str(PAR8) +" "+ str(PAR9) +" "+ str(PAR10) + "\n")
+            f.writelines(str(PAR11) + "\n")
+            f.writelines(str(PAR12) +" "+ str(PAR14) + "\n")
+            f.writelines(str(PAR21) +" "+ str(PAR22) +" "+ str(PAR23) + "\n")
+            f.writelines(str(PAR24) +" "+ str(PAR25) +" "+ str(PAR26) + "\n")
+            f.writelines(str(SWCCPAR1) + "\n")
+            f.writelines(str(SWCCPAR2) +" "+ str(SWCCPAR3) +" "+ str(SWCCPAR4) +" "+ str(SWCCPAR5) + "\n")
+            f.writelines(str(QH1) + "\n")
+            f.writelines(str(QH2) + "\n")
+            f.writelines(str(QH3) + "\n")
+            f.writelines(str(QH4) +" "+ str(QH5) + "\n")
+            f.writelines(str(QH6_1) +" "+ str(QH6_2) +" "+ str(QH6_3) + "\n")
+            f.writelines(str(S) +" "+ str(S1) +" "+ str(S2) +" "+ str(S3) + "\n")
+            f.writelines(str(SUC) + "\n")
+            f.writelines(str(MAXLOOP) + "\n")
+            f.writelines(str(NCYCL) + "\n")
+            f.writelines(str(IMODE1) +" "+ str(IMODE2) +" "+ str(IMODE3) +" "+ str(IMODE4) +" "+ str(DDE) +" "+ str(RATIO) +" "+ str(IDIR) +" "+ str(IREV) +" "+ str(PEAK) +" "+ str(NPRINT) + "\n")
 
-            
-
-#class variables:
-#    def __init__(self, soil):
-#        self.soil = soil
-
-#elements = variables()
-#elements.soil = 0
 
 #VARIABLES
 NT = 0
@@ -511,7 +462,9 @@ QH2 = 0
 QH3 = 0
 QH4 = 0
 QH5 = 0
-QH6 = 0
+QH6_1 = 0
+QH6_2 = 0
+QH6_3 = 0
 
 S = 0
 S1 = 0
