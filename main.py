@@ -165,17 +165,17 @@ class ThirdTab(QWidget):
         self.nameEditPAR2.editingFinished.connect(self.updatevariable)
 
 #PAR3 Label and LineEdit boxes
-        self.namePAR3 = QLabel("PAR3: ")
+        self.namePAR3 = QLabel("\u03BA = PAR(3): ")
         self.nameEditPAR3 = QLineEdit()
         self.nameEditPAR3.editingFinished.connect(self.updatevariable)
 
 #PAR4 Label and LineEdit boxes
-        self.namePAR4 = QLabel("PAR4: ")
+        self.namePAR4 = QLabel("\u03B2 = PAR(4): ")
         self.nameEditPAR4 = QLineEdit()
         self.nameEditPAR4.editingFinished.connect(self.updatevariable)
 
 #PAR5 Label and LineEdit boxes
-        self.namePAR5 = QLabel("PAR5: ")
+        self.namePAR5 = QLabel("r = PAR(5): ")
         self.nameEditPAR5 = QLineEdit()
         self.nameEditPAR5.editingFinished.connect(self.updatevariable)
 
@@ -388,8 +388,8 @@ class FifthTab(QWidget):
     
     def updatevariable2(self):
         with open('export.txt', 'w') as f:
-            f.writelines(repr(IMODE1) + "\n")
-            f.writelines(repr(IMODE2) + "\n")
+            f.writelines(str(IMODE1) + "\n")
+            f.writelines(str(IMODE2) + "\n")
             f.writelines(repr(IMODE3) + "\n")
             f.writelines(repr(IMODE4) + "\n")
             f.writelines(repr(DDE) + "\n")
@@ -443,6 +443,13 @@ class FifthTab(QWidget):
             f.writelines(repr(S2) + "\n")
             f.writelines(repr(S3) + "\n")
             f.writelines(repr(SUC) + "\n")
+
+            #actual
+            f.writelines(str(NT) + "\n")
+            f.writelines(str(PAR1) + str(PAR2) + str(PAR3)+ "\n")
+            f.writelines(str(PAR4) + str(PAR5) + str(PAR6) + "\n")
+            f.writelines(str(PAR7) + "\n")
+            f.writelines(str(IMODE1) + "\n")
 
             
 
