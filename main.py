@@ -26,78 +26,55 @@ class FirstTab(QWidget):
     def __init__(self):
         super().__init__()
 
-        name = QLabel("Name of the Analysis/User")
+#NT, IMODE1, IMODE2 IMODE3, IMODE4, DDE, RATIO, IDIR, IREV, PEAK, NPRINT, MAXLOOP, NCYCL label and LineEdit boxes
+        self.nameNT = QLabel("NT: ")
+        self.nameEditNT = QLineEdit()
+        self.nameEditNT.editingFinished.connect(self.updatevariable)
 
-        layout = QGridLayout()
-        layout.addWidget(name, 0, 0)
-        self.setLayout(layout)
-
-class SecondTab(QWidget):
-    def __init__(self):
-        super().__init__()
-
-#example of how to set up labels and LineEdit boxes
-        self.nameExample = QLabel("Name: ")
-        self.nameEditExample = QLineEdit()
-        self.nameEditExample.editingFinished.connect(self.updatevariable)
-
-
-#IMODE1 Label and LineEdit boxes
         self.nameIMODE1 = QLabel("IMODE(1): ")
         self.nameEditIMODE1 = QLineEdit()
         self.nameEditIMODE1.editingFinished.connect(self.updatevariable)
 
-#IMODE2 Label and LineEdit boxes
         self.nameIMODE2 = QLabel("IMODE(2): ")
         self.nameEditIMODE2 = QLineEdit()
         self.nameEditIMODE2.editingFinished.connect(self.updatevariable)
 
-#IMODE3 Label and LineEdit boxes
         self.nameIMODE3 = QLabel("IMODE(3): ")
         self.nameEditIMODE3 = QLineEdit()
         self.nameEditIMODE3.editingFinished.connect(self.updatevariable)
 
-#IMODE4 Label and LineEdit boxes
         self.nameIMODE4 = QLabel("IMODE(4): ")
         self.nameEditIMODE4 = QLineEdit()
         self.nameEditIMODE4.editingFinished.connect(self.updatevariable)
 
-#DDE Label and LineEdit boxes
         self.nameDDE = QLabel("DDE: ")
         self.nameEditDDE = QLineEdit()
         self.nameEditDDE.editingFinished.connect(self.updatevariable)
 
-#RATIO Label and LineEdit boxes
         self.nameRATIO = QLabel("RATIO: ")
         self.nameEditRATIO = QLineEdit()
         self.nameEditRATIO.editingFinished.connect(self.updatevariable)
 
-#IDIR Label and LineEdit boxes
         self.nameIDIR = QLabel("IDIR: ")
         self.nameEditIDIR = QLineEdit()
         self.nameEditIDIR.editingFinished.connect(self.updatevariable)
 
-#IREV Label and LineEdit boxes
         self.nameIREV = QLabel("IREV: ")
         self.nameEditIREV = QLineEdit()
         self.nameEditIREV.editingFinished.connect(self.updatevariable)
 
-#PEAK Label and LineEdit boxes
         self.namePEAK = QLabel("PEAK: ")
         self.nameEditPEAK = QLineEdit()
         self.nameEditPEAK.editingFinished.connect(self.updatevariable)
 
-#NPRINT Label and LineEdit boxes
         self.nameNPRINT = QLabel("NPRINT: ")
         self.nameEditNPRINT = QLineEdit()
         self.nameEditNPRINT.editingFinished.connect(self.updatevariable)
 
-#MAXLOOP Label and LineEdit boxes
         self.nameMAXLOOP = QLabel("MAXLOOP: ")
         self.nameEditMAXLOOP = QLineEdit()
         self.nameEditMAXLOOP.editingFinished.connect(self.updatevariable)
 
-#NCYCL Label and LineEdit boxes
         self.nameNCYCL = QLabel("NCYCL: ")
         self.nameEditNCYCL = QLineEdit()
         self.nameEditNCYCL.editingFinished.connect(self.updatevariable)
@@ -105,6 +82,8 @@ class SecondTab(QWidget):
 #add objects to layout
         layout = QGridLayout()
 
+        layout.addWidget(self.nameNT, 0, 1)
+        layout.addWidget(self.nameEditNT, 0, 2)
         layout.addWidget(self.nameIMODE1, 1, 1)
         layout.addWidget(self.nameEditIMODE1, 1, 2)
         layout.addWidget(self.nameIMODE2, 2, 1)
@@ -150,126 +129,103 @@ class SecondTab(QWidget):
         NCYCL = self.nameEditNCYCL.text()
 
 
-class ThirdTab(QWidget):
+class SecondTab(QWidget):
     def __init__(self):
         super().__init__()
 
-#PAR1 Label and LineEdit boxes
+#PAR1 - PAR17, PAR21 - PAR26 Label and LineEdit boxes
         self.namePAR1 = QLabel("2G/K = PAR(1): ")
         self.nameEditPAR1 = QLineEdit()
         self.nameEditPAR1.editingFinished.connect(self.updatevariable)
 
-#PAR2 Label and LineEdit boxes
         self.namePAR2 = QLabel("\u03BB(0) = PAR(2): ")
         self.nameEditPAR2 = QLineEdit()
         self.nameEditPAR2.editingFinished.connect(self.updatevariable)
 
-#PAR3 Label and LineEdit boxes
         self.namePAR3 = QLabel("\u03BA = PAR(3): ")
         self.nameEditPAR3 = QLineEdit()
         self.nameEditPAR3.editingFinished.connect(self.updatevariable)
 
-#PAR4 Label and LineEdit boxes
         self.namePAR4 = QLabel("\u03B2 = PAR(4): ")
         self.nameEditPAR4 = QLineEdit()
         self.nameEditPAR4.editingFinished.connect(self.updatevariable)
 
-#PAR5 Label and LineEdit boxes
         self.namePAR5 = QLabel("r = PAR(5): ")
         self.nameEditPAR5 = QLineEdit()
         self.nameEditPAR5.editingFinished.connect(self.updatevariable)
 
-#PAR6 Label and LineEdit boxes
         self.namePAR6 = QLabel("PAR6: ")
         self.nameEditPAR6 = QLineEdit()
         self.nameEditPAR6.editingFinished.connect(self.updatevariable)
 
-#PAR7 Label and LineEdit boxes
         self.namePAR7 = QLabel("PAR7: ")
         self.nameEditPAR7 = QLineEdit()
         self.nameEditPAR7.editingFinished.connect(self.updatevariable)
 
-#PAR8 Label and LineEdit boxes
         self.namePAR8 = QLabel("PAR8: ")
         self.nameEditPAR8 = QLineEdit()
         self.nameEditPAR8.editingFinished.connect(self.updatevariable)
 
-#PAR9 Label and LineEdit boxes
         self.namePAR9 = QLabel("PAR9: ")
         self.nameEditPAR9 = QLineEdit()
         self.nameEditPAR9.editingFinished.connect(self.updatevariable)
 
-#PAR9 Label and LineEdit boxes
         self.namePAR9 = QLabel("PAR9: ")
         self.nameEditPAR9 = QLineEdit()
         self.nameEditPAR9.editingFinished.connect(self.updatevariable)
 
-#PAR10 Label and LineEdit boxes
         self.namePAR10 = QLabel("PAR10: ")
         self.nameEditPAR10 = QLineEdit()
         self.nameEditPAR10.editingFinished.connect(self.updatevariable)
 
-#PAR11 Label and LineEdit boxes
         self.namePAR11 = QLabel("PAR11: ")
         self.nameEditPAR11 = QLineEdit()
         self.nameEditPAR11.editingFinished.connect(self.updatevariable)
 
-#PAR12 Label and LineEdit boxes
         self.namePAR12 = QLabel("PAR12: ")
         self.nameEditPAR12 = QLineEdit()
         self.nameEditPAR12.editingFinished.connect(self.updatevariable)
 
-#PAR13 Label and LineEdit boxes
         self.namePAR13 = QLabel("PAR13: ")
         self.nameEditPAR13 = QLineEdit()
         self.nameEditPAR13.editingFinished.connect(self.updatevariable)
 
-#PAR14 Label and LineEdit boxes
         self.namePAR14 = QLabel("PAR14: ")
         self.nameEditPAR14 = QLineEdit()
         self.nameEditPAR14.editingFinished.connect(self.updatevariable)
 
-#PAR15 Label and LineEdit boxes
         self.namePAR15 = QLabel("PAR15: ")
         self.nameEditPAR15 = QLineEdit()
         self.nameEditPAR15.editingFinished.connect(self.updatevariable)
 
-#PAR16 Label and LineEdit boxes
         self.namePAR16 = QLabel("PAR16: ")
         self.nameEditPAR16 = QLineEdit()
         self.nameEditPAR16.editingFinished.connect(self.updatevariable)
 
-#PAR17 Label and LineEdit boxes
         self.namePAR17 = QLabel("PAR17: ")
         self.nameEditPAR17 = QLineEdit()
         self.nameEditPAR17.editingFinished.connect(self.updatevariable)
 
-#PAR21 Label and LineEdit boxes
         self.namePAR21 = QLabel("PAR21: ")
         self.nameEditPAR21 = QLineEdit()
         self.nameEditPAR21.editingFinished.connect(self.updatevariable)
 
-#PAR22 Label and LineEdit boxes
         self.namePAR22 = QLabel("PAR22: ")
         self.nameEditPAR22 = QLineEdit()
         self.nameEditPAR22.editingFinished.connect(self.updatevariable)
 
-#PAR23 Label and LineEdit boxes
         self.namePAR23 = QLabel("PAR23: ")
         self.nameEditPAR23 = QLineEdit()
         self.nameEditPAR23.editingFinished.connect(self.updatevariable)
 
-#PAR24 Label and LineEdit boxes
         self.namePAR24 = QLabel("PAR24: ")
         self.nameEditPAR24 = QLineEdit()
         self.nameEditPAR24.editingFinished.connect(self.updatevariable)
 
-#PAR25 Label and LineEdit boxes
         self.namePAR25 = QLabel("PAR25: ")
         self.nameEditPAR25 = QLineEdit()
         self.nameEditPAR25.editingFinished.connect(self.updatevariable)
 
-#PAR26 Label and LineEdit boxes
         self.namePAR26 = QLabel("PAR26: ")
         self.nameEditPAR26 = QLineEdit()
         self.nameEditPAR26.editingFinished.connect(self.updatevariable)
@@ -356,6 +312,16 @@ class ThirdTab(QWidget):
         PAR25 = self.nameEditPAR25.text()
         PAR26 = self.nameEditPAR26.text()
 
+class ThirdTab(QWidget):
+    def __init__(self):
+        super().__init__()
+
+        name = QLabel("Name of the Analysis/User")
+
+        layout = QGridLayout()
+        layout.addWidget(name, 0, 0)
+        self.setLayout(layout)
+
 
 class FourthTab(QWidget):
     def __init__(self):
@@ -412,59 +378,14 @@ class FifthTab(QWidget):
 
 
 #VARIABLES
-NT = 0
+NT, IMODE1, IMODE2, IMODE3, IMODE4, DDE, RATIO, IDIR, IREV, PEAK, NPRINT, MAXLOOP, NCYCL = 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
 
-IMODE1 = 0
-IMODE2 = 0 
-IMODE3 = 0
-IMODE4 = 0
-DDE = 0 
-RATIO = 0 
-IDIR = 0
-IREV = 0
-PEAK = 0
-NPRINT = 0
-MAXLOOP = 0
-NCYCL = 0
+PAR1, PAR2, PAR3, PAR4, PAR5, PAR6, PAR7, PAR8, PAR9, PAR10, PAR11, PAR12 = 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 
+PAR13, PAR14, PAR15, PAR16, PAR17, PAR21,PAR22, PAR23, PAR24, PAR25, PAR26 = 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
 
-PAR1 = 0
-PAR2 = 0
-PAR3 = 0
-PAR4 = 0
-PAR5 = 0
-PAR6 = 0
-PAR7 = 0
-PAR8 = 0
-PAR9 = 0
-PAR10 = 0
-PAR11 = 0
-PAR12 = 0
-PAR13 = 0
-PAR14 = 0
-PAR15 = 0
-PAR16 = 0
-PAR17 = 0
-PAR21 = 0
-PAR22 = 0
-PAR23 = 0
-PAR24 = 0
-PAR25 = 0
-PAR26 = 0
+SWCCPAR1, SWCCPAR2, SWCCPAR3, SWCCPAR4, SWCCPAR5 = 0, 0, 0, 0, 0
 
-SWCCPAR1 = 0
-SWCCPAR2 = 0
-SWCCPAR3 = 0
-SWCCPAR4 = 0
-SWCCPAR5 = 0
-
-QH1 = 0
-QH2 = 0
-QH3 = 0
-QH4 = 0
-QH5 = 0
-QH6_1 = 0
-QH6_2 = 0
-QH6_3 = 0
+QH1, QH2, QH3, QH4, QH5, QH6_1, QH6_2, QH6_3 = 0, 0, 0, 0, 0, 0, 0, 0
 
 S = 0
 S1 = 0
