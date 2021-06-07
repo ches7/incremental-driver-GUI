@@ -316,12 +316,52 @@ class ThirdTab(QWidget):
     def __init__(self):
         super().__init__()
 
-        name = QLabel("Name of the Analysis/User")
+        #SWCCPAR1 - 5 label and LineEdit boxes
+        self.nameSWCCPAR1 = QLabel("N = SWCCPAR(1): ")
+        self.nameEditSWCCPAR1 = QLineEdit()
+        self.nameEditSWCCPAR1.editingFinished.connect(self.updatevariable)
 
+        self.nameSWCCPAR2 = QLabel("\u03C6 = SWCCPAR(2): ")
+        self.nameEditSWCCPAR2 = QLineEdit()
+        self.nameEditSWCCPAR2.editingFinished.connect(self.updatevariable)
+
+        self.nameSWCCPAR3 = QLabel("n = SWCCPAR(3): ")
+        self.nameEditSWCCPAR3 = QLineEdit()
+        self.nameEditSWCCPAR3.editingFinished.connect(self.updatevariable)
+
+        self.nameSWCCPAR4 = QLabel("m = SWCCPAR(4): ")
+        self.nameEditSWCCPAR4 = QLineEdit()
+        self.nameEditSWCCPAR4.editingFinished.connect(self.updatevariable)
+
+        self.nameSWCCPAR5 = QLabel("\u03C8 = SWCCPAR(5): ")
+        self.nameEditSWCCPAR5 = QLineEdit()
+        self.nameEditSWCCPAR5.editingFinished.connect(self.updatevariable)                
+
+#add objects to layout
         layout = QGridLayout()
-        layout.addWidget(name, 0, 0)
+
+        layout.addWidget(self.nameSWCCPAR1, 0, 1)
+        layout.addWidget(self.nameEditSWCCPAR1, 0, 2)
+        layout.addWidget(self.nameSWCCPAR2, 1, 1)
+        layout.addWidget(self.nameEditSWCCPAR2, 1, 2)
+        layout.addWidget(self.nameSWCCPAR3, 2, 1)
+        layout.addWidget(self.nameEditSWCCPAR3, 2, 2)
+        layout.addWidget(self.nameSWCCPAR4, 3, 1)
+        layout.addWidget(self.nameEditSWCCPAR4, 3, 2)
+        layout.addWidget(self.nameSWCCPAR5, 4, 1)
+        layout.addWidget(self.nameEditSWCCPAR5, 4, 2)
+
         self.setLayout(layout)
 
+#set up updates to global variables    
+    def updatevariable(self):
+        global SWCCPAR1, SWCCPAR2, SWCCPAR3, SWCCPAR4, SWCCPAR5
+
+        SWCCPAR1 = self.nameEditSWCCPAR1.text()
+        SWCCPAR2 = self.nameEditSWCCPAR2.text()
+        SWCCPAR3 = self.nameEditSWCCPAR3.text()
+        SWCCPAR4 = self.nameEditSWCCPAR4.text()
+        SWCCPAR5 = self.nameEditSWCCPAR5.text()
 
 class FourthTab(QWidget):
     def __init__(self):
@@ -343,14 +383,32 @@ class FifthTab(QWidget):
     def __init__(self):
         super().__init__()
 
+#preview label and export button
+        self.nameLabelPreview = QLabel("Preview: ")
+        self.namePreview = QLabel()
+
         self.button3 = QtWidgets.QPushButton(self)
         self.button3.setText("export as txt")
         self.button3.clicked.connect(self.updatevariable2)
 
+        self.refreshbutton = QtWidgets.QPushButton(self)
+        self.refreshbutton.setText("Refresh Preview")
+        self.refreshbutton.clicked.connect(self.updatePreview)
+
+#add objects to layout
         layout = QGridLayout()
-        layout.addWidget(self.button3, 1, 1)
+
+        layout.addWidget(self.nameLabelPreview, 1, 1)
+        layout.addWidget(self.namePreview, 1, 2)
+        layout.addWidget(self.button3, 2, 1)
+        layout.addWidget(self.refreshbutton, 3, 1)
+
         self.setLayout(layout)
-    
+
+    def updatePreview(self):
+        global NT, PAR1
+        self.namePreview.setText(str(NT) +" "+ str(PAR1))
+
     
     def updatevariable2(self):
         with open('export.txt', 'w') as f:
@@ -387,13 +445,9 @@ SWCCPAR1, SWCCPAR2, SWCCPAR3, SWCCPAR4, SWCCPAR5 = 0, 0, 0, 0, 0
 
 QH1, QH2, QH3, QH4, QH5, QH6_1, QH6_2, QH6_3 = 0, 0, 0, 0, 0, 0, 0, 0
 
-S = 0
-S1 = 0
-S2 = 0
-S3 = 0
-SUC = 0
+S, S1, S2, S3, SUC = 0, 0, 0, 0, 0
 
-
+#window loop
 def window():
     app = QApplication(sys.argv)
     screen = Window()
