@@ -29,6 +29,7 @@ class FirstTab(QWidget):
         super().__init__()
 
         self.nameNT = QLabel("NT: ")
+        self.nameNT.setToolTip("stress space dimension, 4 for single point and 2D, 6 only for 3D-Abaqus")
         self.nameEditNT = QLineEdit()
         self.nameEditNT.editingFinished.connect(self.updatevariable)
 
@@ -53,12 +54,14 @@ class SecondTab(QWidget):
 #IMODE1, IMODE2 IMODE3, IMODE4, DDE, RATIO, IDIR, IREV, PEAK, NPRINT, MAXLOOP, NCYCL label and LineEdit boxes
 
         self.nameIMODE1 = QLabel("IMODE(1): ")
+        self.nameIMODE1.setToolTip("1 - Undrained, 2 - Drained")
         self.comboboxIMODE1 = QComboBox()
         self.comboboxIMODE1.addItem("Undrained")
         self.comboboxIMODE1.addItem("Drained")
         self.comboboxIMODE1.currentTextChanged.connect(self.update_combobox_IMODE1)
 
         self.nameIMODE2 = QLabel("IMODE(2): ")
+        self.nameIMODE2.setToolTip("1 – Triaxial, 2- Plane Strain, 3 – DSS, 4 – Proportional TRX, 5 – Isotropic, 6 – constant p, 7 – 1D")
         self.comboboxIMODE2 = QComboBox()
         self.comboboxIMODE2.addItem("Triaxial")
         self.comboboxIMODE2.addItem("Plane Strain")
@@ -70,46 +73,56 @@ class SecondTab(QWidget):
         self.comboboxIMODE2.currentTextChanged.connect(self.update_combobox_IMODE2)
 
         self.nameIMODE3 = QLabel("IMODE(3): ")
+        self.nameIMODE3.setToolTip("1 – stress controlled, 2- strain controlled")
         self.comboboxIMODE3 = QComboBox()
         self.comboboxIMODE3.addItem("Stress Controlled")
         self.comboboxIMODE3.addItem("Strain Controlled")
         self.comboboxIMODE3.currentTextChanged.connect(self.update_combobox_IMODE3)
 
         self.nameIMODE4 = QLabel("IMODE(4): ")
+        self.nameIMODE4.setToolTip("1 - constant suction, 2- Wetting/Drying")
         self.comboboxIMODE4 = QComboBox()
         self.comboboxIMODE4.addItem("Constant Suction")
         self.comboboxIMODE4.addItem("Wetting/Drying")
         self.comboboxIMODE4.currentTextChanged.connect(self.update_combobox_IMODE4)
 
         self.nameDDE = QLabel("DDE: ")
+        self.nameDDE.setToolTip("infinitesimal increment")
         self.nameEditDDE = QLineEdit()
         self.nameEditDDE.editingFinished.connect(self.updatevariable)
 
         self.nameRATIO = QLabel("RATIO: ")
+        self.nameRATIO.setToolTip("stress ratio (for proportional TRX)")
         self.nameEditRATIO = QLineEdit()
         self.nameEditRATIO.editingFinished.connect(self.updatevariable)
 
         self.nameIDIR = QLabel("IDIR: ")
+        self.nameIDIR.setToolTip("direction for loading (+1 loading, -1 unloading)")
         self.nameEditIDIR = QLineEdit()
         self.nameEditIDIR.editingFinished.connect(self.updatevariable)
 
         self.nameIREV = QLabel("IREV: ")
+        self.nameIREV.setToolTip("")
         self.nameEditIREV = QLineEdit()
         self.nameEditIREV.editingFinished.connect(self.updatevariable)
 
         self.namePEAK = QLabel("PEAK: ")
+        self.namePEAK.setToolTip("maximum stress or strain level to be reached")
         self.nameEditPEAK = QLineEdit()
         self.nameEditPEAK.editingFinished.connect(self.updatevariable)
 
         self.nameNPRINT = QLabel("NPRINT: ")
+        self.nameNPRINT.setToolTip("number of outputs")
         self.nameEditNPRINT = QLineEdit()
         self.nameEditNPRINT.editingFinished.connect(self.updatevariable)
 
         self.nameMAXLOOP = QLabel("MAXLOOP: ")
+        self.nameMAXLOOP.setToolTip("maximum increment applied")
         self.nameEditMAXLOOP = QLineEdit()
         self.nameEditMAXLOOP.editingFinished.connect(self.updatevariable)
 
         self.nameNCYCL = QLabel("NCYCL: ")
+        self.nameNCYCL.setToolTip("number of tests")
         self.nameEditNCYCL = QLineEdit()
         self.nameEditNCYCL.editingFinished.connect(self.updatevariable)
 
@@ -202,94 +215,117 @@ class ThirdTab(QWidget):
 
 #PAR1 - PAR17, PAR21 - PAR26 Label and LineEdit boxes
         self.namePAR1 = QLabel("2G/K = PAR(1): ")
+        self.namePAR1.setToolTip("elasticity parameter (controls shear modulus)")
         self.nameEditPAR1 = QLineEdit()
         self.nameEditPAR1.editingFinished.connect(self.updatevariable)
 
         self.namePAR2 = QLabel("\u03BB(0) = PAR(2): ")
+        self.namePAR2.setToolTip("saturated compressibility")
         self.nameEditPAR2 = QLineEdit()
         self.nameEditPAR2.editingFinished.connect(self.updatevariable)
 
         self.namePAR3 = QLabel("\u03BA = PAR(3): ")
+        self.namePAR3.setToolTip("elasticity parameter (controls bulk modulus)")
         self.nameEditPAR3 = QLineEdit()
         self.nameEditPAR3.editingFinished.connect(self.updatevariable)
 
         self.namePAR4 = QLabel("\u03B2 = PAR(4): ")
+        self.namePAR4.setToolTip("unsaturated compressibility")
         self.nameEditPAR4 = QLineEdit()
         self.nameEditPAR4.editingFinished.connect(self.updatevariable)
 
         self.namePAR5 = QLabel("r = PAR(5): ")
+        self.namePAR5.setToolTip("unsaturated compressibility")
         self.nameEditPAR5 = QLineEdit()
         self.nameEditPAR5.editingFinished.connect(self.updatevariable)
 
         self.namePAR6 = QLabel("\u03B3 = PAR(6): ")
+        self.namePAR6.setToolTip("unsaturated compressibility")
         self.nameEditPAR6 = QLineEdit()
         self.nameEditPAR6.editingFinished.connect(self.updatevariable)
 
         self.namePAR7 = QLabel("Pc = PAR(7): ")
+        self.namePAR7.setToolTip("reference pressure")
         self.nameEditPAR7 = QLineEdit()
         self.nameEditPAR7.editingFinished.connect(self.updatevariable)
 
         self.namePAR8 = QLabel("Niso = PAR(8): ")
+        self.namePAR8.setToolTip("position of the NCL")
         self.nameEditPAR8 = QLineEdit()
         self.nameEditPAR8.editingFinished.connect(self.updatevariable)
 
         self.namePAR9 = QLabel("\u0393 = PAR(9): ")
+        self.namePAR9.setToolTip("position of the CSL")
         self.nameEditPAR9 = QLineEdit()
         self.nameEditPAR9.editingFinished.connect(self.updatevariable)
 
         self.namePAR10 = QLabel("rb = PAR(10): ")
+        self.namePAR10.setToolTip("compressibility framework parameter")
         self.nameEditPAR10 = QLineEdit()
         self.nameEditPAR10.editingFinished.connect(self.updatevariable)
 
         self.namePAR11 = QLabel("X = PAR(11): ")
+        self.namePAR11.setToolTip("flow rule (controls dilatancy)")
         self.nameEditPAR11 = QLineEdit()
         self.nameEditPAR11.editingFinished.connect(self.updatevariable)
 
         self.namePAR12 = QLabel("\u03A8 = PAR(12): ")
+        self.namePAR12.setToolTip("hardening rule")
         self.nameEditPAR12 = QLineEdit()
         self.nameEditPAR12.editingFinished.connect(self.updatevariable)
 
         self.namePAR13 = QLabel("nevp = PAR(13): ")
+        self.namePAR13.setToolTip("void – not used, default 0")
         self.nameEditPAR13 = QLineEdit()
         self.nameEditPAR13.editingFinished.connect(self.updatevariable)
 
         self.namePAR14 = QLabel("neqp = PAR(14): ")
+        self.namePAR14.setToolTip("hardening rule parameter")
         self.nameEditPAR14 = QLineEdit()
         self.nameEditPAR14.editingFinished.connect(self.updatevariable)
 
         self.namePAR15 = QLabel("nv exp = PAR(15): ")
+        self.namePAR15.setToolTip("void – not used, default 0")
         self.nameEditPAR15 = QLineEdit()
         self.nameEditPAR15.editingFinished.connect(self.updatevariable)
 
         self.namePAR16 = QLabel("nv exp = PAR(16): ")
+        self.namePAR16.setToolTip("void – not used, default 0")
         self.nameEditPAR16 = QLineEdit()
         self.nameEditPAR16.editingFinished.connect(self.updatevariable)
 
         self.namePAR17 = QLabel("PAR(17): ")
+        self.namePAR17.setToolTip("void – not used, default 0")
         self.nameEditPAR17 = QLineEdit()
         self.nameEditPAR17.editingFinished.connect(self.updatevariable)
 
         self.namePAR21 = QLabel("PAR(21): ")
+        self.namePAR21.setToolTip("YS aspect ratio; 1st deviatoric plane of the Transformed Stress Space (TSS)")
         self.nameEditPAR21 = QLineEdit()
         self.nameEditPAR21.editingFinished.connect(self.updatevariable)
 
         self.namePAR22 = QLabel("PAR(22): ")
+        self.namePAR22.setToolTip("YS aspect ratio; 2nd deviatoric plane of the Transformed Stress Space (TSS)")
         self.nameEditPAR22 = QLineEdit()
         self.nameEditPAR22.editingFinished.connect(self.updatevariable)
 
         self.namePAR23 = QLabel("PAR(23): ")
+        self.namePAR23.setToolTip("YS aspect ratio; 3rd deviatoric plane of the Transformed Stress Space (TSS)")
         self.nameEditPAR23 = QLineEdit()
         self.nameEditPAR23.editingFinished.connect(self.updatevariable)
 
         self.namePAR24 = QLabel("PAR(24): ")
+        self.namePAR24.setToolTip("PPS aspect ratio; 1st deviatoric plane of the Transformed Stress Space (TSS)")
         self.nameEditPAR24 = QLineEdit()
         self.nameEditPAR24.editingFinished.connect(self.updatevariable)
 
         self.namePAR25 = QLabel("PAR(25): ")
+        self.namePAR25.setToolTip("YS aspect ratio; 2nd deviatoric plane of the Transformed Stress Space (TSS)")
         self.nameEditPAR25 = QLineEdit()
         self.nameEditPAR25.editingFinished.connect(self.updatevariable)
 
         self.namePAR26 = QLabel("PAR(26): ")
+        self.namePAR26.setToolTip("YS aspect ratio; 3rd deviatoric plane of the Transformed Stress Space (TSS)")
         self.nameEditPAR26 = QLineEdit()
         self.nameEditPAR26.editingFinished.connect(self.updatevariable)
 
@@ -381,22 +417,27 @@ class FourthTab(QWidget):
 
         #SWCCPAR1 - 5 label and LineEdit boxes
         self.nameSWCCPAR1 = QLabel("N = SWCCPAR(1): ")
+        self.nameSWCCPAR1.setToolTip("Effective Sr parameter")
         self.nameEditSWCCPAR1 = QLineEdit()
         self.nameEditSWCCPAR1.editingFinished.connect(self.updatevariable)
 
         self.nameSWCCPAR2 = QLabel("\u03C6 = SWCCPAR(2): ")
+        self.nameSWCCPAR2.setToolTip("Gallipoli WRC parameter")
         self.nameEditSWCCPAR2 = QLineEdit()
         self.nameEditSWCCPAR2.editingFinished.connect(self.updatevariable)
 
         self.nameSWCCPAR3 = QLabel("n = SWCCPAR(3): ")
+        self.nameSWCCPAR3.setToolTip("Gallipoli WRC parameter")
         self.nameEditSWCCPAR3 = QLineEdit()
         self.nameEditSWCCPAR3.editingFinished.connect(self.updatevariable)
 
         self.nameSWCCPAR4 = QLabel("m = SWCCPAR(4): ")
+        self.nameSWCCPAR4.setToolTip("Gallipoli WRC parameter")
         self.nameEditSWCCPAR4 = QLineEdit()
         self.nameEditSWCCPAR4.editingFinished.connect(self.updatevariable)
 
         self.nameSWCCPAR5 = QLabel("\u03C8 = SWCCPAR(5): ")
+        self.nameSWCCPAR5.setToolTip("Gallipoli WRC parameter")
         self.nameEditSWCCPAR5 = QLineEdit()
         self.nameEditSWCCPAR5.editingFinished.connect(self.updatevariable)                
 
@@ -432,54 +473,67 @@ class FifthTab(QWidget):
 
         #QH1 - 6_3 S, S1 - 3, SUC label and LineEdit boxes
         self.nameQH1 = QLabel("QH(1): ")
+        self.nameQH1.setToolTip("a, isotropic hardening")
         self.nameEditQH1 = QLineEdit()
         self.nameEditQH1.editingFinished.connect(self.updatevariable)
 
         self.nameQH2 = QLabel("v(s) = QH(2): ")
+        self.nameQH2.setToolTip("specific volume")
         self.nameEditQH2 = QLineEdit()
         self.nameEditQH2.editingFinished.connect(self.updatevariable)
 
         self.nameQH3 = QLabel("NSURF = QH(3): ")
+        self.nameQH3.setToolTip("flag identifier; 0 - elastic state, 1 - plastic state")
         self.nameEditQH3 = QLineEdit()
         self.nameEditQH3.editingFinished.connect(self.updatevariable)
 
         self.nameQH4 = QLabel("Evp = QH(4): ")
+        self.nameQH4.setToolTip("accumulated plastic volumetric strains")
         self.nameEditQH4 = QLineEdit()
         self.nameEditQH4.editingFinished.connect(self.updatevariable)
 
         self.nameQH5 = QLabel("Evq = QH(5): ")
+        self.nameQH5.setToolTip("accumulated plastic deviatoric strains")
         self.nameEditQH5 = QLineEdit()
         self.nameEditQH5.editingFinished.connect(self.updatevariable)
 
         self.nameQH6_1 = QLabel("b1 = QH(6): ")
+        self.nameQH6_1.setToolTip("anisotropy tensor; 1st deviatoric plane of the Transformed Stress Space (TSS)")
         self.nameEditQH6_1 = QLineEdit()
         self.nameEditQH6_1.editingFinished.connect(self.updatevariable)
 
         self.nameQH6_2 = QLabel("b2 = QH(6): ")
+        self.nameQH6_2.setToolTip("anisotropy tensor; 2nd deviatoric plane of the Transformed Stress Space (TSS)")
         self.nameEditQH6_2 = QLineEdit()
         self.nameEditQH6_2.editingFinished.connect(self.updatevariable)
 
         self.nameQH6_3 = QLabel("b3 = QH(6): ")
+        self.nameQH6_3.setToolTip("anisotropy tensor; 3rd deviatoric plane of the Transformed Stress Space (TSS)")
         self.nameEditQH6_3 = QLineEdit()
         self.nameEditQH6_3.editingFinished.connect(self.updatevariable)
 
         self.nameS = QLabel("S: ")
+        self.nameS.setToolTip("mean stress")
         self.nameEditS = QLineEdit()
         self.nameEditS.editingFinished.connect(self.updatevariable)
 
         self.nameS1 = QLabel("S(1): ")
+        self.nameS1.setToolTip("1st deviatoric stress component in TSS")
         self.nameEditS1 = QLineEdit()
         self.nameEditS1.editingFinished.connect(self.updatevariable)
 
         self.nameS2 = QLabel("S(2): ")
+        self.nameS2.setToolTip("2nd deviatoric stress component in TSS")
         self.nameEditS2 = QLineEdit()
         self.nameEditS2.editingFinished.connect(self.updatevariable)
 
         self.nameS3 = QLabel("S(3): ")
+        self.nameS3.setToolTip("3rd deviatoric stress component in TSS")
         self.nameEditS3 = QLineEdit()
         self.nameEditS3.editingFinished.connect(self.updatevariable)
 
         self.nameSUC = QLabel("SUC: ")
+        self.nameSUC.setToolTip("Suction Value")
         self.nameEditSUC = QLineEdit()
         self.nameEditSUC.editingFinished.connect(self.updatevariable)   
 
@@ -577,7 +631,9 @@ class SixthTab(QWidget):
 
 
 #VARIABLES
-NT, IMODE1, IMODE2, IMODE3, IMODE4, DDE, RATIO, IDIR, IREV, PEAK, NPRINT, MAXLOOP, NCYCL = 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0
+NT = 0
+
+IMODE1, IMODE2, IMODE3, IMODE4, DDE, RATIO, IDIR, IREV, PEAK, NPRINT, MAXLOOP, NCYCL = 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0
 
 PAR1, PAR2, PAR3, PAR4, PAR5, PAR6, PAR7, PAR8, PAR9, PAR10, PAR11, PAR12 = 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 
 PAR13, PAR14, PAR15, PAR16, PAR17, PAR21,PAR22, PAR23, PAR24, PAR25, PAR26 = 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
