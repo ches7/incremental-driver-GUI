@@ -166,8 +166,9 @@ class FirstTab(QWidget):
 
 #set up updates to global variables    
     def updatevariable(self):
-        global DDE, RATIO, IDIR, IREV, PEAK, NPRINT, MAXLOOP, NCYCL
+        global NT, DDE, RATIO, IDIR, IREV, PEAK, NPRINT, MAXLOOP, NCYCL
 
+        NT = self.nameEditNT.text()
         DDE = self.nameEditDDE.text()
         RATIO = self.nameEditRATIO.text()
         IDIR = self.nameEditIDIR.text()
@@ -499,7 +500,7 @@ class FourthTab(QWidget):
 
 #set up updates to global variables    
     def updatevariable(self):
-        global SWCCPAR1, SWCCPAR2, SWCCPAR3, SWCCPAR4, SWCCPAR5
+        global QH1, QH2, QH3, QH4, QH5, QH6_1, QH6_2, QH6_3, S, S1, S2, S3, SUC
 
         QH1 = self.nameEditQH1.text()
         QH2 = self.nameEditQH2.text()
@@ -520,12 +521,15 @@ class FifthTab(QWidget):
         super().__init__()
 
 #export button
+        self.nameWarning = QLabel("Please ensure all fields are filled before exporting")
+
         self.exportButton = QtWidgets.QPushButton(self)
         self.exportButton.setText("Export as txt")
         self.exportButton.clicked.connect(self.write_txt)
 
 #add objects to layout
         layout = QGridLayout()
+        layout.addWidget(self.nameWarning, 1, 0)
         layout.addWidget(self.exportButton, 1, 1)
         self.setLayout(layout)
 
