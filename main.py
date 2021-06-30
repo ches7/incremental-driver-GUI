@@ -14,10 +14,11 @@ class Window(QWidget):
 
         tabwidget = QTabWidget()
         tabwidget.addTab(FirstTab(), "General Information")
-        tabwidget.addTab(SecondTab(), "Material Constants")
-        tabwidget.addTab(ThirdTab(), "Water Retention Model")
-        tabwidget.addTab(FourthTab(), "Initial Conditions")
-        tabwidget.addTab(FifthTab(), "Export")
+        tabwidget.addTab(SecondTab(), "tab")
+        tabwidget.addTab(ThirdTab(), "Material Constants")
+        tabwidget.addTab(FourthTab(), "Water Retention Model")
+        tabwidget.addTab(FifthTab(), "Initial Conditions")
+        tabwidget.addTab(SixthTab(), "Export")
         layout.addWidget(tabwidget, 0, 0)
 
     #def update(self):
@@ -27,10 +28,29 @@ class FirstTab(QWidget):
     def __init__(self):
         super().__init__()
 
-#NT, IMODE1, IMODE2 IMODE3, IMODE4, DDE, RATIO, IDIR, IREV, PEAK, NPRINT, MAXLOOP, NCYCL label and LineEdit boxes
         self.nameNT = QLabel("NT: ")
         self.nameEditNT = QLineEdit()
         self.nameEditNT.editingFinished.connect(self.updatevariable)
+
+#add objects to layout
+        layout = QGridLayout()
+
+        layout.addWidget(self.nameNT, 0, 1)
+        layout.addWidget(self.nameEditNT, 0, 2)
+
+        self.setLayout(layout)
+
+    def updatevariable(self):
+        global NT
+
+        NT = self.nameEditNT.text()
+
+
+class SecondTab(QWidget):
+    def __init__(self):
+        super().__init__()
+
+#IMODE1, IMODE2 IMODE3, IMODE4, DDE, RATIO, IDIR, IREV, PEAK, NPRINT, MAXLOOP, NCYCL label and LineEdit boxes
 
         self.nameIMODE1 = QLabel("IMODE(1): ")
         self.comboboxIMODE1 = QComboBox()
@@ -96,8 +116,6 @@ class FirstTab(QWidget):
 #add objects to layout
         layout = QGridLayout()
 
-        layout.addWidget(self.nameNT, 0, 1)
-        layout.addWidget(self.nameEditNT, 0, 2)
         layout.addWidget(self.nameIMODE1, 1, 1)
         layout.addWidget(self.comboboxIMODE1, 1, 2)
         layout.addWidget(self.nameIMODE2, 2, 1)
@@ -166,9 +184,8 @@ class FirstTab(QWidget):
 
 #set up updates to global variables    
     def updatevariable(self):
-        global NT, DDE, RATIO, IDIR, IREV, PEAK, NPRINT, MAXLOOP, NCYCL
+        global DDE, RATIO, IDIR, IREV, PEAK, NPRINT, MAXLOOP, NCYCL
 
-        NT = self.nameEditNT.text()
         DDE = self.nameEditDDE.text()
         RATIO = self.nameEditRATIO.text()
         IDIR = self.nameEditIDIR.text()
@@ -179,7 +196,7 @@ class FirstTab(QWidget):
         NCYCL = self.nameEditNCYCL.text()
 
 
-class SecondTab(QWidget):
+class ThirdTab(QWidget):
     def __init__(self):
         super().__init__()
 
@@ -358,7 +375,7 @@ class SecondTab(QWidget):
         PAR25 = self.nameEditPAR25.text()
         PAR26 = self.nameEditPAR26.text()
 
-class ThirdTab(QWidget):
+class FourthTab(QWidget):
     def __init__(self):
         super().__init__()
 
@@ -409,7 +426,7 @@ class ThirdTab(QWidget):
         SWCCPAR4 = self.nameEditSWCCPAR4.text()
         SWCCPAR5 = self.nameEditSWCCPAR5.text()
 
-class FourthTab(QWidget):
+class FifthTab(QWidget):
     def __init__(self):
         super().__init__()
 
@@ -516,7 +533,7 @@ class FourthTab(QWidget):
         S3 = self.nameEditS3.text()
         SUC = self.nameEditSUC.text()
 
-class FifthTab(QWidget):
+class SixthTab(QWidget):
     def __init__(self):
         super().__init__()
 
