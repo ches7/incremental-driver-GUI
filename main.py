@@ -14,10 +14,10 @@ class Window(QWidget):
 
         tabwidget = QTabWidget()
         tabwidget.addTab(FirstTab(), "General Information")
-        tabwidget.addTab(SecondTab(), "tab")
-        tabwidget.addTab(ThirdTab(), "Material Constants")
-        tabwidget.addTab(FourthTab(), "Water Retention Model")
-        tabwidget.addTab(FifthTab(), "Initial Conditions")
+        tabwidget.addTab(SecondTab(), "Material Constants")
+        tabwidget.addTab(ThirdTab(), "Water Retention Model")
+        tabwidget.addTab(FourthTab(), "Initial Conditions")
+        tabwidget.addTab(FifthTab(), "Test")
         tabwidget.addTab(SixthTab(), "Export")
         layout.addWidget(tabwidget, 0, 0)
 
@@ -28,6 +28,12 @@ class FirstTab(QWidget):
     def __init__(self):
         super().__init__()
 
+        self.information = QLabel("This program is to be used in conjuction with the FORTRAN program developed in Siterenios 2016.")
+        self.information2 = QLabel("\n\nPlease fill in the appropriate data fields in each tab")
+        self.information3 = QLabel("\n\n\n\nWhen you have filled out all necessary information navigate to the export tab and click export")
+        self.information4 = QLabel("\n\n\n\n\n\nAn ASCII text file will be produced that can be used to perform the soils analysis")
+        self.information5 = QLabel("\n\n\n\n\n\n\n\nPlease ensure that you have filled out all fields, any empty fields will default to 0")
+
         self.nameNT = QLabel("NT: ")
         self.nameNT.setToolTip("stress space dimension, 4 for single point and 2D, 6 only for 3D-Abaqus")
         self.nameEditNT = QLineEdit()
@@ -36,8 +42,14 @@ class FirstTab(QWidget):
 #add objects to layout
         layout = QGridLayout()
 
-        layout.addWidget(self.nameNT, 0, 1)
-        layout.addWidget(self.nameEditNT, 0, 2)
+        layout.addWidget(self.information, 0, 0, 1, 0)
+        layout.addWidget(self.information2, 0, 0, 1, 0)
+        layout.addWidget(self.information3, 0, 0, 1, 0)
+        layout.addWidget(self.information4, 0, 0, 1, 0)
+        layout.addWidget(self.information5, 0, 0, 1, 0)
+
+        layout.addWidget(self.nameNT, 6, 0)
+        layout.addWidget(self.nameEditNT, 6, 1)
 
         self.setLayout(layout)
 
