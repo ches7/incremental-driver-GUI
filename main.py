@@ -44,7 +44,10 @@ class FirstTab(QWidget):
     def updatevariable(self):
         global NT
 
-        NT = self.nameEditNT.text()
+        if self.nameEditNT.text() == '':
+            NT = 0
+        else:
+            NT = self.nameEditNT.text()
 
 
 class SecondTab(QWidget):
@@ -199,14 +202,45 @@ class SecondTab(QWidget):
     def updatevariable(self):
         global DDE, RATIO, IDIR, IREV, PEAK, NPRINT, MAXLOOP, NCYCL
 
-        DDE = self.nameEditDDE.text()
-        RATIO = self.nameEditRATIO.text()
-        IDIR = self.nameEditIDIR.text()
-        IREV = self.nameEditIREV.text()
-        PEAK = self.nameEditPEAK.text()
-        NPRINT = self.nameEditNPRINT.text()
-        MAXLOOP = self.nameEditMAXLOOP.text()
-        NCYCL = self.nameEditNCYCL.text()
+        if self.nameEditDDE.text() == '':
+            DDE = 0
+        else:
+            DDE = self.nameEditDDE.text()
+    
+        if self.nameEditRATIO.text() == '':
+            RATIO = 0
+        else:
+            RATIO = self.nameEditRATIO.text()
+        
+        if self.nameEditIDIR.text() == '':
+            IDIR = 0
+        else:
+            IDIR = self.nameEditIDIR.text()
+
+        if self.nameEditIREV.text() == '':
+            IREV = 0
+        else:
+            IREV = self.nameEditIREV.text()
+
+        if self.nameEditPEAK.text() == '':
+            PEAK = 0
+        else:
+            PEAK = self.nameEditPEAK.text()
+
+        if self.nameEditNPRINT.text() == '':
+            NPRINT = 0
+        else:
+            NPRINT = self.nameEditNPRINT.text()            
+
+        if self.nameEditMAXLOOP.text() == '':
+            MAXLOOP = 0
+        else:
+            MAXLOOP = self.nameEditMAXLOOP.text()
+
+        if self.nameEditNCYCL.text() == '':
+            NCYCL = 0
+        else:
+            NCYCL = self.nameEditNCYCL.text()
 
 
 class ThirdTab(QWidget):
@@ -387,29 +421,120 @@ class ThirdTab(QWidget):
     def updatevariable(self):
         global PAR1, PAR2, PAR3, PAR4, PAR5, PAR6, PAR7, PAR8, PAR9, PAR10, PAR11, PAR12, PAR13, PAR14, PAR15, PAR16, PAR17, PAR21, PAR22, PAR23, PAR24, PAR25, PAR26 
 
-        PAR1 = self.nameEditPAR1.text()
-        PAR2 = self.nameEditPAR2.text()
-        PAR3 = self.nameEditPAR3.text()
-        PAR4 = self.nameEditPAR4.text()
-        PAR5 = self.nameEditPAR5.text()
-        PAR6 = self.nameEditPAR6.text()
-        PAR7 = self.nameEditPAR7.text()
-        PAR8 = self.nameEditPAR8.text()
-        PAR9 = self.nameEditPAR9.text()
-        PAR10 = self.nameEditPAR10.text()
-        PAR11 = self.nameEditPAR11.text()
-        PAR12 = self.nameEditPAR12.text()
-        PAR13 = self.nameEditPAR13.text()
-        PAR14 = self.nameEditPAR14.text()
-        PAR15 = self.nameEditPAR15.text()
-        PAR16 = self.nameEditPAR16.text()
-        PAR17 = self.nameEditPAR17.text()
-        PAR21 = self.nameEditPAR21.text()
-        PAR22 = self.nameEditPAR22.text()
-        PAR23 = self.nameEditPAR23.text()
-        PAR24 = self.nameEditPAR24.text()
-        PAR25 = self.nameEditPAR25.text()
-        PAR26 = self.nameEditPAR26.text()
+        if self.nameEditPAR1.text() == '':
+            PAR1 = 0
+        else:
+            PAR1 = self.nameEditPAR1.text()
+
+        if self.nameEditPAR2.text() == '':
+            PAR2 = 0
+        else:
+            PAR2 = self.nameEditPAR2.text()
+
+        if self.nameEditPAR3.text() == '':
+            PAR3 = 0
+        else:
+            PAR3 = self.nameEditPAR3.text()
+
+        if self.nameEditPAR4.text() == '':
+            PAR4 = 0
+        else:
+            PAR4 = self.nameEditPAR4.text()
+
+        if self.nameEditPAR5.text() == '':
+            PAR5 = 0
+        else:
+            PAR5 = self.nameEditPAR5.text()
+
+        if self.nameEditPAR6.text() == '':
+            PAR6 = 0
+        else:
+            PAR6 = self.nameEditPAR6.text()
+
+        if self.nameEditPAR7.text() == '':
+            PAR7 = 0
+        else:
+            PAR7 = self.nameEditPAR7.text()
+
+        if self.nameEditPAR8.text() == '':
+            PAR8 = 0
+        else:
+            PAR8 = self.nameEditPAR8.text()
+
+        if self.nameEditPAR9.text() == '':
+            PAR9 = 0
+        else:
+            PAR9 = self.nameEditPAR9.text()
+
+        if self.nameEditPAR10.text() == '':
+            PAR10 = 0
+        else:
+            PAR10 = self.nameEditPAR10.text()
+
+        if self.nameEditPAR11.text() == '':
+            PAR11 = 0
+        else:
+            PAR11 = self.nameEditPAR11.text()
+
+        if self.nameEditPAR12.text() == '':
+            PAR12 = 0
+        else:
+            PAR12 = self.nameEditPAR12.text()
+
+        if self.nameEditPAR13.text() == '':
+            PAR13 = 0
+        else:
+            PAR13 = self.nameEditPAR13.text()
+
+        if self.nameEditPAR14.text() == '':
+            PAR14 = 0
+        else:
+            PAR14 = self.nameEditPAR14.text()
+
+        if self.nameEditPAR15.text() == '':
+            PAR15 = 0
+        else:
+            PAR15 = self.nameEditPAR15.text()
+
+        if self.nameEditPAR16.text() == '':
+            PAR16 = 0
+        else:
+            PAR16 = self.nameEditPAR16.text()
+
+        if self.nameEditPAR17.text() == '':
+            PAR17 = 0
+        else:
+            PAR17 = self.nameEditPAR17.text()
+
+        if self.nameEditPAR21.text() == '':
+            PAR21 = 0
+        else:
+            PAR21 = self.nameEditPAR21.text()
+
+        if self.nameEditPAR22.text() == '':
+            PAR22 = 0
+        else:
+            PAR22 = self.nameEditPAR22.text()
+
+        if self.nameEditPAR23.text() == '':
+            PAR23 = 0
+        else:
+            PAR23 = self.nameEditPAR23.text()
+
+        if self.nameEditPAR24.text() == '':
+            PAR24 = 0
+        else:
+            PAR24 = self.nameEditPAR24.text()
+        
+        if self.nameEditPAR25.text() == '':
+            PAR25 = 0
+        else:
+            PAR25 = self.nameEditPAR25.text()
+
+        if self.nameEditPAR26.text() == '':
+            PAR26 = 0
+        else:
+            PAR26 = self.nameEditPAR26.text()
 
 class FourthTab(QWidget):
     def __init__(self):
@@ -461,11 +586,30 @@ class FourthTab(QWidget):
     def updatevariable(self):
         global SWCCPAR1, SWCCPAR2, SWCCPAR3, SWCCPAR4, SWCCPAR5
 
-        SWCCPAR1 = self.nameEditSWCCPAR1.text()
-        SWCCPAR2 = self.nameEditSWCCPAR2.text()
-        SWCCPAR3 = self.nameEditSWCCPAR3.text()
-        SWCCPAR4 = self.nameEditSWCCPAR4.text()
-        SWCCPAR5 = self.nameEditSWCCPAR5.text()
+        if self.nameEditSWCCPAR1.text() == '':
+            SWCCPAR1 = 0
+        else:
+            SWCCPAR1 = self.nameEditSWCCPAR1.text()
+
+        if self.nameEditSWCCPAR2.text() == '':
+            SWCCPAR2 = 0
+        else:
+            SWCCPAR2 = self.nameEditSWCCPAR2.text()
+
+        if self.nameEditSWCCPAR3.text() == '':
+            SWCCPAR3 = 0
+        else:
+            SWCCPAR3 = self.nameEditSWCCPAR3.text()
+
+        if self.nameEditSWCCPAR4.text() == '':
+            SWCCPAR4 = 0
+        else:
+            SWCCPAR4 = self.nameEditSWCCPAR4.text()
+
+        if self.nameEditSWCCPAR5.text() == '':
+            SWCCPAR5 = 0
+        else:
+            SWCCPAR5 = self.nameEditSWCCPAR5.text()
 
 class FifthTab(QWidget):
     def __init__(self):
@@ -573,19 +717,70 @@ class FifthTab(QWidget):
     def updatevariable(self):
         global QH1, QH2, QH3, QH4, QH5, QH6_1, QH6_2, QH6_3, S, S1, S2, S3, SUC
 
-        QH1 = self.nameEditQH1.text()
-        QH2 = self.nameEditQH2.text()
-        QH3 = self.nameEditQH3.text()
-        QH4 = self.nameEditQH4.text()
-        QH5 = self.nameEditQH5.text()
-        QH6_1 = self.nameEditQH6_1.text()
-        QH6_2 = self.nameEditQH6_2.text()
-        QH6_3 = self.nameEditQH6_3.text()
-        S = self.nameEditS.text()
-        S1 = self.nameEditS1.text()
-        S2 = self.nameEditS2.text()
-        S3 = self.nameEditS3.text()
-        SUC = self.nameEditSUC.text()
+        if self.nameEditQH1.text() == '':
+            QH1 = 0
+        else:
+            QH1 = self.nameEditQH1.text()
+
+        if self.nameEditQH2.text() == '':
+            QH2 = 0
+        else:
+            QH2 = self.nameEditQH2.text()
+
+        if self.nameEditQH3.text() == '':
+            QH3 = 0
+        else:
+            QH3 = self.nameEditQH3.text()
+
+        if self.nameEditQH4.text() == '':
+            QH4 = 0
+        else:
+            QH4 = self.nameEditQH4.text()
+
+        if self.nameEditQH5.text() == '':
+            QH5 = 0
+        else:
+            QH5 = self.nameEditQH5.text()
+
+        if self.nameEditQH6_1.text() == '':
+            QH6_1 = 0
+        else:
+            QH6_1 = self.nameEditQH6_1.text()
+
+        if self.nameEditQH6_2.text() == '':
+            QH6_2 = 0
+        else:
+            QH6_2 = self.nameEditQH6_2.text()
+
+        if self.nameEditQH6_3.text() == '':
+            QH6_3 = 0
+        else:
+            QH6_3 = self.nameEditQH6_3.text()
+
+        if self.nameEditS.text() == '':
+            S = 0
+        else:
+            S = self.nameEditS.text()
+
+        if self.nameEditS1.text() == '':
+            S1 = 0
+        else:
+            S1 = self.nameEditS1.text()
+
+        if self.nameEditS2.text() == '':
+            S2 = 0
+        else:
+            S2 = self.nameEditS2.text()
+
+        if self.nameEditS3.text() == '':
+            S3 = 0
+        else:
+            S3 = self.nameEditS3.text()
+
+        if self.nameEditSUC.text() == '':
+            SUC = 0
+        else:
+            SUC = self.nameEditSUC.text()
 
 class SixthTab(QWidget):
     def __init__(self):
