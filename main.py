@@ -29,10 +29,10 @@ class FirstTab(QWidget):
         super().__init__()
 
         self.information = QLabel("This program is to be used in conjuction with the FORTRAN program developed in Siterenios 2016.")
-        self.information2 = QLabel("\n\nPlease fill in the appropriate data fields in each tab")
-        self.information3 = QLabel("\n\n\n\nWhen you have filled out all necessary information navigate to the export tab and click export")
-        self.information4 = QLabel("\n\n\n\n\n\nAn ASCII text file will be produced that can be used to perform the soils analysis")
-        self.information5 = QLabel("\n\n\n\n\n\n\n\nPlease ensure that you have filled out all fields, any empty fields will default to 0")
+        self.information2 = QLabel("\n\nPlease fill in the appropriate data fields in each tab.")
+        self.information3 = QLabel("\n\n\n\nWhen you have filled out all necessary information navigate to the export tab and click export.")
+        self.information4 = QLabel("\n\n\n\n\n\nAn ASCII text file will be produced that can be used to perform the soils analysis.")
+        self.information5 = QLabel("\n\n\n\n\n\n\n\nPlease ensure that you have filled out all fields, any empty fields will default to 0.")
 
         self.nameNT = QLabel("NT: ")
         self.nameNT.setToolTip("stress space dimension, 4 for single point and 2D, 6 only for 3D-Abaqus")
@@ -799,15 +799,12 @@ class SixthTab(QWidget):
         super().__init__()
 
 #export button
-        self.nameWarning = QLabel("Please ensure all fields are filled before exporting")
-
         self.exportButton = QtWidgets.QPushButton(self)
         self.exportButton.setText("Export as txt")
         self.exportButton.clicked.connect(self.write_txt)
 
 #add objects to layout
         layout = QGridLayout()
-        layout.addWidget(self.nameWarning, 1, 0)
         layout.addWidget(self.exportButton, 1, 1)
         self.setLayout(layout)
 
